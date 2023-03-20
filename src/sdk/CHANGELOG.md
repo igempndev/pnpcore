@@ -26,6 +26,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 - Added `Rename` methods on `IFolder` to make it easier to rename a folder #1080 [jansenbe - Bert Jansen]
 - Support for reading and cloning News Digest pages #1086 [jansenbe - Bert Jansen]
 - Add capabilities to grant or revoke permissions to existing sharing link #1094 [MathijsVerbeeck - Mathijs Verbeeck]
+- Support for listing, approving and denying api access requests after installing an app #1100 [mloitzl - Martin Loitzl]
+- Added `Rename` methods on `IFile` to make it easier to rename a file #1109 [jansenbe - Bert Jansen]
+- Added feature to enable or disable the SharePoint service principal #1117 [mloitzl - Martin Loitzl]
+- Method to ensure the 'Everyone except external users' user for any site language #1127 [plamber - Patrick Lamber] 
+- Added support for listing, adding and revoking permission grants for a SharePoint service principal #1132 [mloitzl - Martin Loitzl]
+- Admin library: added support for listing Azure ACS principals and SharePoint AddIns [jansenbe - Bert Jansen]
 
 ### Changed
 
@@ -42,6 +48,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 - Extended the `IPnPContext` interface to contain all the public method and properties to better support mocking in unit tests #1083 [jansenbe - Bert Jansen]
 - Fix SiteCollectionManager.GetSiteCollectionWithDetailsAsync returning null when getting root site collection #1089 [jansenbe - Bert Jansen]
 - Removed `BlockDownloadFileTypeIds` and `ExcludedBlockDownloadGroupIds` properties from Tenant properties as they could not be saved preventing other property updates #1087 [jansenbe - Bert Jansen]
+- Added the `RetainEditorAndModifiedOnMove` property to the `MoveCopyOptions` and optimized file copy/move operations to use the cross site API as much as possible #989 #1091 [jansenbe - Bert Jansen]
+- Dropped .NET 5 support as it's not supported anymore [jansenbe - Bert Jansen]
+- Fix for IFile/IListItem - CheckIfUserHasPermissionsAsync Throws ->System.NullReferenceException: #1097 [jansenbe - Bert Jansen]
+- Improved model for `PnPContext` extensions allowing them to be used by mocking frameworks in unit tests #1083 [plamber - Patrick Lamber]
+- Chars ' and . are allowed in alias and urls [jansenbe - Bert Jansen]
+- Add possibility to get the `IServicePrincipal` via `IAppManager` #1116 [mloitzl - Martin Loitzl]
+- Don't set `BaseAddress` of `MicrosoftGraphClient` when there's no change #1114 [jansenbe - Bert Jansen]
+- Option to create private/shared Teams channels #1126 [JakeStanger - Jake Stanger]
+- Bump Nuget package version dependencies to align with PnP PS needs [jansenbe - Bert Jansen]
 
 ## [1.8.0]
 
